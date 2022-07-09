@@ -6,10 +6,12 @@ class Solver
   end
 
   def reverse(word)
+    raise 'invalid input' unless word.is_a?(String)
     word.reverse
   end
 
-  def fizzbuzz
+  def fizzbuzz(n)
+    n.to_s
   end
 end
 

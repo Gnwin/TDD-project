@@ -37,9 +37,33 @@ RSpec.describe Solver do
       it 'checks if the reverse method returns a reverse string word' do
         expect(subject.reverse('string')).to eql 'gnirts'
       end
+
+      it 'raises an runtime error message(invalid input) when the argument is not a string' do
+        expect {subject.reverse(-10)}.to raise_error(RuntimeError)
+      end
     end
   end
 
   describe "#fizzbuzz" do
+    it 'Checks that the fizzbuzz method can receive a value' do
+      mock = double('solver')
+      allow(mock).to receive(:fizzbuzz).with(1)
+    end
+
+    it 'Checks if the fizzbuzz method returns fizz when n is divisible by 3 ' do
+      expect(subject.fizzbuzz(3)).to eql 'fizz'
+    end
+
+    it 'Checks if the fizzbuzz method returns buzz when n is divisible by 5 ' do
+      expect(subject.fizzbuzz(5)).to eql 'buzz'
+    end
+
+    it 'Checks if the fizzbuzz method returns fizzbuzz when n is divisible by 3 and 5 ' do
+      expect(subject.fizzbuzz(15)).to eql 'fizzbuzz'
+    end
+
+    it 'Checks if the fizzbuzz method returns N as a string when n is not divisible by 3 and 5 ' do
+      expect(subject.fizzbuzz(4)).to eql '4'
+    end
   end
 end
