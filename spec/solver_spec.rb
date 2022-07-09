@@ -1,7 +1,7 @@
 require_relative '../lib/solver.rb'
 
 describe Solver do
-  # Subject {Solver.new}
+  # subject {Solver.new}
   describe "#factorial" do
     # let(:array_of_numbers) { [1, 2, 3, 4, 5] }
     # let(:str_array) { %w[cat sheep bear] }
