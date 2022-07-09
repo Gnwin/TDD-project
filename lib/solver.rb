@@ -1,6 +1,8 @@
 class Solver
   def factorial(n)
-    n * (n-1) * (n-2) * (n-3) * (n-4)
+    raise 'invalid number' if n.negative?
+    return 1 if n.zero?
+    n * factorial(n-1)
   end
 
   def reverse
@@ -9,3 +11,6 @@ class Solver
   def fizzbuzz
   end
 end
+
+solver = Solver.new
+p solver.factorial(-10)
