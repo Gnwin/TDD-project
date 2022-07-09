@@ -12,5 +12,3 @@ class Solver
   end
 end
 
-solver = Solver.new
-p solver.factorial(-10)
