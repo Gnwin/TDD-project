@@ -11,6 +11,10 @@ class Solver
   end
 
   def fizzbuzz(n)
+    return 'fizzbuzz' if (n % 5).zero? and (n % 3).zero?
+    return 'fizz' if (n % 3).zero?
+    return 'buzz' if (n % 5).zero?
+
     n.to_s
   end
 end
