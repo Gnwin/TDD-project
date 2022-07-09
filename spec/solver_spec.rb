@@ -1,7 +1,7 @@
-require_relative '../lib/solver.rb'
+require_relative '../lib/solver'
 
 RSpec.describe Solver do
-  describe "#factorial" do
+  describe '#factorial' do
     context 'Testing the factorial method' do
       it 'checks that the factorial method can receive a value' do
         mock = double('solver')
@@ -16,7 +16,7 @@ RSpec.describe Solver do
       end
 
       it 'raises an runtime error message(invalid number) when the argument is a negative number' do
-        expect {subject.factorial(-10)}.to raise_error(RuntimeError)
+        expect { subject.factorial(-10) }.to raise_error(RuntimeError)
       end
 
       it 'checks that the factorial method identifies 0 as an argument and returns 1' do
@@ -25,7 +25,7 @@ RSpec.describe Solver do
     end
   end
 
-  describe "#reverse" do
+  describe '#reverse' do
     context 'Testing the reverse method' do
       it 'checks that the reverse method can receive a value' do
         mock = double('solver')
@@ -39,31 +39,33 @@ RSpec.describe Solver do
       end
 
       it 'raises an runtime error message(invalid input) when the argument is not a string' do
-        expect {subject.reverse(-10)}.to raise_error(RuntimeError)
+        expect { subject.reverse(-10) }.to raise_error(RuntimeError)
       end
     end
   end
 
-  describe "#fizzbuzz" do
-    it 'Checks that the fizzbuzz method can receive a value' do
-      mock = double('solver')
-      allow(mock).to receive(:fizzbuzz).with(1)
-    end
+  describe '#fizzbuzz' do
+    context 'Testing the fizzbuzz method' do
+      it 'checks that the fizzbuzz method can receive a value' do
+        mock = double('solver')
+        allow(mock).to receive(:fizzbuzz).with(1)
+      end
 
-    it 'Checks if the fizzbuzz method returns fizz when n is divisible by 3 ' do
-      expect(subject.fizzbuzz(3)).to eql 'fizz'
-    end
+      it 'checks if the fizzbuzz method returns fizz when n is divisible by 3 ' do
+        expect(subject.fizzbuzz(3)).to eql 'fizz'
+      end
 
-    it 'Checks if the fizzbuzz method returns buzz when n is divisible by 5 ' do
-      expect(subject.fizzbuzz(5)).to eql 'buzz'
-    end
+      it 'checks if the fizzbuzz method returns buzz when n is divisible by 5 ' do
+        expect(subject.fizzbuzz(5)).to eql 'buzz'
+      end
 
-    it 'Checks if the fizzbuzz method returns fizzbuzz when n is divisible by 3 and 5 ' do
-      expect(subject.fizzbuzz(15)).to eql 'fizzbuzz'
-    end
+      it 'checks if the fizzbuzz method returns fizzbuzz when n is divisible by 3 and 5 ' do
+        expect(subject.fizzbuzz(15)).to eql 'fizzbuzz'
+      end
 
-    it 'Checks if the fizzbuzz method returns N as a string when n is not divisible by 3 and 5 ' do
-      expect(subject.fizzbuzz(4)).to eql '4'
+      it 'checks if the fizzbuzz method returns N as a string when n is not divisible by 3 and 5 ' do
+        expect(subject.fizzbuzz(4)).to eql '4'
+      end
     end
   end
 end
