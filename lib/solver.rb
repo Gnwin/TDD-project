@@ -5,7 +5,8 @@ class Solver
     n * factorial(n-1)
   end
 
-  def reverse
+  def reverse(word)
+    word.reverse
   end
 
   def fizzbuzz
