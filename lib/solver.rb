@@ -1,5 +1,5 @@
 class Solver
-  def factorial
+  def factorial(n)
   end
 
   def reverse
